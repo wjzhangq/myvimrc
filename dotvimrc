@@ -28,3 +28,9 @@ set completeopt=longest,menu
 
 set ai ignorecase tabstop=4
 set nu
+
+au FileType php call AddPHPFuncList()
+function AddPHPFuncList()
+    set dictionary-=$HOME/myvimrc/ExtraVim/php_funclist.txt dictionary+=$HOME/myvimrc/ExtraVim/php_funclist.txt
+    set complete-=k complete+=k
+endfunction
